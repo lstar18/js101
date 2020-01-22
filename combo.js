@@ -20,21 +20,20 @@ const oppositeNum = (anyNum) => {
 };
 console.log(oppositeNum(500));
 
-const checkPalindrom = (string) => {
-    let stringLength = string.length;
-        if (stringLength === 0 || stringLength === 1){
-            return true;
-        }
-    if (string[0] === string[stringLength -1]) {
-        return checkPalindrom(string.slice(1, stringLength -1));
-    }
-        return false;
-    };
-    console.log(checkPalindrom("hello"));
-    console.log(checkPalindrom("dad"));
+const checkPalindrome = (text) => {
+    const cleanText= text.toLowerCase().replace(' ', ''); //removes spaces
+    const opp = cleanText.split('').reverse().join('');
+
+    return (cleanText === opp) 
+};
+console.log('palindrome', checkPalindrome("hello"));
+console.log('palindrome', checkPalindrome("dad"));
+console.log('palindrome', checkPalindrome("Race car"));
+
+  
 
 const mouthSize = (animal) => {
-    if (animal === 'alligator') {
+    if (animal.toLowerCase() === 'alligator') {
         return 'small'    }
     else {
         return 'wide'
@@ -43,4 +42,5 @@ const mouthSize = (animal) => {
 };
     console.log(mouthSize('alligator'));
     console.log(mouthSize('frog'));
+    console.log(mouthSize('ALLigator'));
    
